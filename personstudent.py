@@ -9,13 +9,13 @@ class Person:
         self.address = addy
 
     def display(self):
-        return str(self.last_name) + ", " + str(self.first_name) + '\n' + self.address.display()
+        return str(self.last_name) + ", " + str(self.first_name) + '\n' + self.address
 
 class Student:
 
-    def __init__(self,lname,fname,major,gpa):
-        self.last_name = lname
-        self.first_name = fname
+    def __init__(self,PersonObject,major,gpa):
+        self.last_name = PersonObject.last_name
+        self.first_name = PersonObject.first_name
         self.major = major
         self.gpa = gpa
 
@@ -40,3 +40,5 @@ stud = Student(per,'CIS',4.0)
 stud.change_major('Being Awesome')
 stud.change_gpa(3.0)
 print(stud.display())
+del per
+del stud
